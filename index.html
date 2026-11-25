@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#c8102e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="한자카메라">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<title>한자 카메라</title>
+<style>
+*{box-sizing:border-box;min-width:0;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;overflow:hidden}
+.hz{font-family:"PingFang SC","Noto Sans SC","Noto Sans CJK SC","Source Han Sans SC",serif}
+#stage{position:fixed;inset:0}
+#v,#still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}#still{object-fit:contain;background:#000}
+#layer{position:absolute;inset:0;pointer-events:none}
+.box{position:absolute;border:2px solid #ffd34d;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.ch{position:absolute;transform:translateY(-100%);display:flex;flex-direction:column;align-items:center;padding-bottom:3px}
+.ch b,.ch i,.ln b,.ln i{display:block;font-style:normal;background:rgba(0,0,0,.78);padding:0 4px;white-space:nowrap;line-height:1.25}
+.ch b{font-size:13px;border-radius:5px 5px 0 0}
+.ch i{font-size:15px;font-weight:800;color:#fff;border-radius:0 0 5px 5px}
+.ln{position:absolute;transform:translateY(calc(-100% - 4px));background:rgba(0,0,0,.8);border-radius:8px;padding:3px 6px}
+.ln b,.ln i{background:none;padding:0;white-space:normal}
+.ln b{font-size:13px;color:#ffd34d}.ln i{font-size:15px;font-weight:800}
+.hit{position:absolute;pointer-events:auto;background:transparent;border:0;padding:0;cursor:pointer}
+.t1{color:#ff8c5a}.t2{color:#7ee08a}.t3{color:#6cb8ff}.t4{color:#e08cff}.t0{color:#ddd}
+#top{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 10px) 14px 10px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
+#top h1{margin:0;font-size:17px;font-weight:800}
+#top .lg{font-size:12px;opacity:.9}
+#st{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 56px);transform:translateX(-50%);background:rgba(200,16,46,.95);padding:8px 14px;border-radius:999px;font-size:14px;width:max-content;max-width:92vw;text-align:center}
+#bar{position:fixed;left:0;right:0;bottom:0;background:rgba(20,17,15,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 12px calc(env(safe-area-inset-bottom) + 10px);border-radius:18px 18px 0 0}
+#count{font-size:13px;color:#bbb;margin:0 4px 6px}
+#list{max-height:26vh;overflow-y:auto;display:grid;gap:6px;margin-bottom:10px}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 12px;text-align:left;background:#2a2420;border:0;border-radius:10px;padding:8px 12px;color:#fff;font:inherit}
+.row .hz{font-size:20px;grid-row:span 2;align-self:center}
+.row .py{font-size:13px;color:#ffd34d;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .ko{font-size:15px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ctl{display:flex;gap:8px}
+.ctl button,.ctl label{flex:1;min-height:50px;border:0;border-radius:14px;font:800 16px inherit;font-family:inherit;display:flex;align-items:center;justify-content:center;background:#3a322c;color:#fff;cursor:pointer}
+#freeze{background:#c8102e;flex:2}#freeze.on{background:#ffd34d;color:#1d1a17}
+#torch.on{background:#ffd34d;color:#1d1a17}
+.ctl input{position:absolute;opacity:0;width:1px;height:1px}
+#sheet{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;z-index:5}
+#sheet[hidden]{display:none}
+#dbox{background:#fbf8f3;color:#1d1a17;width:100%;max-height:82vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:16px 16px calc(env(safe-area-inset-bottom) + 20px)}
+#dbox .t1{color:#d9480f}#dbox .t2{color:#2b8a3e}#dbox .t3{color:#1c7ed6}#dbox .t4{color:#9c36b5}
+#close{float:right;border:0;background:#e9e2d8;border-radius:999px;min-width:44px;min-height:44px;font-size:18px}
+.dh{display:flex;gap:10px;align-items:center;justify-content:space-between;clear:both}
+.big{font-size:34px;margin:0;line-height:1.2}.sm{margin:2px 0 0;color:#6b625a;font-size:14px}
+.say{border:0;background:#c8102e;color:#fff;border-radius:12px;min-height:44px;padding:0 14px;font:800 15px inherit;font-family:inherit;flex:none}
+h3{font-size:15px;margin:18px 0 8px;color:#6b625a}
+.wd{display:flex;gap:14px;align-items:center;padding:8px 0;border-bottom:1px solid #e6ddd2}
+.wd .hz{font-size:26px}.wd b{color:#c8102e}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.cc{display:flex;flex-direction:column;align-items:center;background:#fff;border:1px solid #e6ddd2;border-radius:12px;padding:8px 4px;font:inherit;color:inherit}
+.cc .p{font-weight:700}.cc .hz{font-size:40px;line-height:1.15}.cc .tr{font-size:13px;color:#6b625a}.cc .h{font-size:13px;font-weight:700;text-align:center}
+#intro{position:fixed;inset:0;z-index:9;background:#c8102e;display:flex;flex-direction:column;justify-content:center;padding:28px max(7vw,22px) calc(env(safe-area-inset-bottom) + 28px)}
+#intro[hidden]{display:none}
+#intro .mark{font-size:86px;line-height:1;font-weight:900;margin:0 0 14px}
+#intro h2{font-size:30px;line-height:1.15;margin:0 0 10px}
+#intro p{margin:0 0 10px;font-size:16px;max-width:30em}
+#intro .demo{display:inline-flex;gap:10px;margin:8px 0 22px}
+#intro .demo div{background:rgba(0,0,0,.25);border-radius:10px;padding:6px 10px;text-align:center}
+#intro .demo b{display:block;font-size:13px;color:#ffd34d}#intro .demo span{display:block;font-size:30px}#intro .demo i{font-style:normal;font-weight:800}
+#start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font:900 18px inherit;font-family:inherit;max-width:420px}
+#intro small{display:block;margin-top:14px;opacity:.85;font-size:13px}
+</style>
+</head>
+<body>
+<div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="layer"></div></div>
+<div id="top"><h1>한자 카메라</h1><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
+<div id="st" role="status" hidden></div>
+<div id="bar">
+  <p id="count">한자에 카메라를 비춰 보세요</p>
+  <div id="list"></div>
+  <div class="ctl">
+    <label>사진<input type="file" id="photo" accept="image/*"></label>
+    <button id="freeze" type="button">멈추기</button>
+    <button id="torch" type="button" hidden>손전등</button>
+  </div>
+</div>
+<div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
+<div id="intro">
+  <p class="mark hz">汉</p>
+  <h2>비추면 바로 읽어 주는<br>한자 카메라</h2>
+  <p>간판·메뉴에 카메라를 대면 글자마다 <b>중국어 발음(병음)</b>과 <b>한국 한자음</b>이 바로 떠요. 줄을 누르면 훈음과 뜻이 나와요.</p>
+  <div class="demo"><div><b>chū</b><span class="hz">出</span><i>출</i></div><div><b>kǒu</b><span class="hz">口</span><i>구</i></div></div>
+  <button id="start" type="button">카메라 켜기</button>
+  <small>모든 인식은 휴대폰 안에서 해요. 처음 한 번 엔진(약 30MB)을 받고 나면 인터넷 없이도 돼요.</small>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
