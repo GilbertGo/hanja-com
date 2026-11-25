@@ -95,9 +95,6 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .phone{background:#141210;border-radius:30px;padding:10px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .scr{background:#2e3a2f;border-radius:22px;padding:16px 16px 16px}
 .chips{display:flex;gap:6px;padding-left:10px}
-.mscr{background:#fff6e0;padding:14px 12px}.mscr .chips{padding-left:4px}.mscr .chips div{width:52px}
-.mline{display:flex;align-items:flex-end;gap:4px;color:#5a1a0a;white-space:nowrap}.col{display:flex;flex-direction:column;align-items:center;flex:1}.cp{background:rgba(29,26,23,.88);border-radius:7px;width:100%;text-align:center;padding:2px 0}.cp b{display:block;font-size:12px}.cp i{display:block;font-style:normal;font-weight:900;font-size:15px;color:#fff}.col .hz{font-size:clamp(30px,10vw,44px);font-weight:900;line-height:1.15}.mline .pr{font-size:clamp(18px,6vw,26px);font-weight:900;margin-left:6px;padding-bottom:6px}
-.mrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}.mdesc{background:#5a1a0a;color:#ffe9c7;font-weight:800;font-size:15px;border-radius:6px;padding:3px 10px}.won{background:#ffd34d;color:#1d1a17;font-weight:900;font-size:15px;border-radius:6px;padding:3px 10px}
 .chips div{background:rgba(0,0,0,.85);border-radius:8px;width:56px;text-align:center;padding:3px 0}
 .chips b{display:block;font-size:14px}.chips i{display:block;font-style:normal;font-weight:900;font-size:17px;color:#fff}
 .sign{background:#0b7a3b;color:#fff;border-radius:6px;font-size:48px;font-weight:900;padding:6px 14px;margin-top:4px;letter-spacing:4px}
@@ -105,6 +102,19 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .menu{background:#fff6e0;border-radius:12px;padding:10px 14px;margin-top:14px;color:#5a1a0a}
 .menu .hz{margin:0;font-size:28px;font-weight:900}.menu .md{margin:2px 0 6px;font-size:15px;font-weight:800;color:#7a2a10}
 .menu span{display:inline-block;background:#ffd34d;color:#1d1a17;font-weight:900;border-radius:8px;padding:3px 12px;font-size:15px}
+.scene{position:relative;height:clamp(380px,112vw,440px)}
+.paper{position:absolute;left:0;top:0;width:74%;background:#fbf1dc;border:3px solid #a3121f;outline:2px solid #d9a441;outline-offset:-9px;border-radius:6px;padding:16px 16px 18px;transform:rotate(-3deg);box-shadow:0 10px 24px rgba(0,0,0,.35);color:#3a1a0a}
+.mt{margin:0 0 8px;text-align:center;font-size:30px;font-weight:900;color:#a3121f;letter-spacing:6px}
+.mi{display:flex;align-items:baseline;gap:4px;margin:0;padding:5px 0;font-size:17px;font-weight:700;border-top:1px dashed #d9b98a;white-space:nowrap}
+.mi i{flex:1;border-bottom:2px dotted #b89a70;margin:0 2px}
+.mi.hl{background:rgba(255,211,77,.35)}
+.ph{position:absolute;right:0;bottom:0;width:76%;background:#141210;border-radius:26px;padding:9px;transform:rotate(5deg);box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.pscr{position:relative;background:#f3e6c8;border-radius:19px;padding:30px 12px 14px;overflow:hidden}
+.rec{position:absolute;left:12px;top:8px;font-size:11px;font-weight:800;color:#c8102e}
+.cn{position:absolute;width:18px;height:18px;border-color:#fff;border-style:solid;filter:drop-shadow(0 0 1px #000)}
+.c1{left:6px;top:24px;border-width:3px 0 0 3px}.c2{right:6px;top:24px;border-width:3px 3px 0 0}.c3{left:6px;bottom:6px;border-width:0 0 3px 3px}.c4{right:6px;bottom:6px;border-width:0 3px 3px 0}
+.mline{display:flex;align-items:flex-end;gap:3px;color:#3a1a0a;white-space:nowrap}.col{display:flex;flex-direction:column;align-items:center;flex:1}.cp{background:rgba(29,26,23,.85);border-radius:6px;width:100%;text-align:center;padding:1px 0}.cp b{display:block;font-size:11px}.cp i{display:block;font-style:normal;font-weight:900;font-size:13px;color:#fff}.col .hz{font-size:clamp(28px,9vw,38px);font-weight:700;line-height:1.15}
+.mrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}.mdesc{background:#5a1a0a;color:#ffe9c7;font-weight:800;font-size:13px;border-radius:6px;padding:2px 8px}.won{background:#ffd34d;color:#1d1a17;font-weight:900;font-size:13px;border-radius:6px;padding:2px 8px}
 .pills{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pills span{background:#9e0c24;color:#fff;border-radius:999px;text-align:center;font-weight:800;font-size:15px;padding:9px 6px}
 #start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:19px;font-family:inherit}
@@ -131,11 +141,25 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
   <h2>한자 카메라</h2>
-  <div class="phone" aria-hidden="true"><div class="scr mscr">
-    <div class="mline"><div class="col"><div class="cp"><b class="t2">nóng</b><i>농</i></div><span class="hz">农</span></div><div class="col"><div class="cp"><b class="t1">jiā</b><i>가</i></div><span class="hz">家</span></div><div class="col"><div class="cp"><b class="t3">xiǎo</b><i>소</i></div><span class="hz">小</span></div><div class="col"><div class="cp"><b class="t3">chǎo</b><i>초</i></div><span class="hz">炒</span></div><div class="col"><div class="cp"><b class="t4">ròu</b><i>육</i></div><span class="hz">肉</span></div><span class="hz pr">38元</span></div>
-    <div class="mrow"><span class="mdesc">🌶️🌶️ 돼지고기 고추 볶음</span><span class="won">₩7,620</span></div>
-  </div></div>
-  <p class="tag">메뉴판에 카메라를 비추면<br>발음·요리 설명·가격이 떠요</p>
+  <div class="scene" aria-hidden="true">
+    <div class="paper">
+      <p class="mt hz">菜 单</p>
+      <p class="mi hz hl"><span>农家小炒肉</span><i></i><span>¥38</span></p>
+      <p class="mi hz"><span>土家三下锅</span><i></i><span>¥88</span></p>
+      <p class="mi hz"><span>岩耳炖土鸡</span><i></i><span>¥98</span></p>
+      <p class="mi hz"><span>干煸四季豆</span><i></i><span>¥28</span></p>
+      <p class="mi hz"><span>酸辣土豆丝</span><i></i><span>¥18</span></p>
+    </div>
+    <div class="ph">
+      <div class="pscr">
+        <span class="rec">● 카메라</span>
+        <span class="cn c1"></span><span class="cn c2"></span><span class="cn c3"></span><span class="cn c4"></span>
+        <div class="mline"><div class="col"><div class="cp"><b class="t2">nóng</b><i>농</i></div><span class="hz">农</span></div><div class="col"><div class="cp"><b class="t1">jiā</b><i>가</i></div><span class="hz">家</span></div><div class="col"><div class="cp"><b class="t3">xiǎo</b><i>소</i></div><span class="hz">小</span></div><div class="col"><div class="cp"><b class="t3">chǎo</b><i>초</i></div><span class="hz">炒</span></div><div class="col"><div class="cp"><b class="t4">ròu</b><i>육</i></div><span class="hz">肉</span></div></div>
+        <div class="mrow"><span class="mdesc">🌶️🌶️ 돼지고기 고추 볶음</span><span class="won">¥38 → ₩7,620</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="tag">메뉴판에 휴대폰을 비추기만 하세요</p>
   <button id="start" type="button">카메라 켜기</button>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
   <div id="ios" hidden>📲 <b>홈 화면에 설치:</b> 아래쪽 공유 버튼 <span class="ib">⬆︎</span> → <b>홈 화면에 추가</b></div>
