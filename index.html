@@ -142,6 +142,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .fingers i{display:block;height:34px;border-radius:0 18px 18px 0;background:linear-gradient(90deg,#c88a62,#efc29e 55%,#d79a72);box-shadow:3px 4px 6px rgba(0,0,0,.35)}
 .fingers i:nth-child(2){height:36px}.fingers i:nth-child(3){height:30px;width:90%}
 .phone3{z-index:2}
+.hero{display:block;width:calc(100% + 44px);max-width:none;margin:0 -22px;height:auto;max-height:62vh;object-fit:cover;object-position:50% 30%}
 .pills{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pills span{background:#9e0c24;color:#fff;border-radius:999px;text-align:center;font-weight:800;font-size:15px;padding:9px 6px}
 #start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:19px;font-family:inherit}
@@ -168,45 +169,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
   <h2>한자 카메라</h2>
-  <div class="scene" aria-hidden="true">
-    <div class="table"></div>
-    <div class="cup"><i></i></div>
-    <div class="sticks"><i></i><i></i></div>
-    <div class="bowl"></div>
-    <div class="paper">
-      <div class="ph1 hz"><span>湘</span>农家菜 · 菜单</div>
-      <p class="mi hz"><span>农家小炒肉</span><i></i><span>38元</span></p>
-      <p class="mi hz"><span>土家三下锅</span><i></i><span>88元</span></p>
-      <p class="mi hz"><span>岩耳炖土鸡</span><i></i><span>98元</span></p>
-      <p class="mi hz"><span>干煸四季豆</span><i></i><span>28元</span></p>
-      <p class="mi hz"><span>酸辣土豆丝</span><i></i><span>18元</span></p>
-      <p class="mi hz"><span>米豆腐</span><i></i><span>12元</span></p>
-    </div>
-    <div class="phone3">
-      <span class="btn1"></span><span class="btn2"></span>
-      <div class="scr3">
-        <div class="cam">
-          <div class="feed hz">
-            <div class="sel"><p class="fl"><span class="fc"><em class="t2">nóng</em><u>농</u>农</span><span class="fc"><em class="t1">jiā</em><u>가</u>家</span><span class="fc"><em class="t3">xiǎo</em><u>소</u>小</span><span class="fc"><em class="t3">chǎo</em><u>초</u>炒</span><span class="fc"><em class="t4">ròu</em><u>육</u>肉</span><span class="fp">38元</span></p>
-            </div><p class="fb">🌶️🌶️ 돼지고기 고추 볶음</p><br><span class="tagw2">¥38 ≈ ₩7,620</span>
-            <p class="fl2">土家三下锅 <span class="fp">88元</span></p><p class="fl2">岩耳炖土鸡 <span class="fp">98元</span></p><p class="fl2">干煸四季豆 <span class="fp">28元</span></p>
-          </div>
-          
-        </div>
-        <div class="bar3"><span>사진</span><span class="stop">멈추기</span><span>손전등</span></div>
-        <span class="hole"></span>
-      </div>
-      <span class="glare"></span>
-      <svg class="hand" viewBox="0 0 200 200" aria-hidden="true">
-        <defs><linearGradient id="sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1c6a2"/><stop offset=".6" stop-color="#dfa47c"/><stop offset="1" stop-color="#c88a62"/></linearGradient>
-        <linearGradient id="sk2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c88a62"/><stop offset=".45" stop-color="#efc29e"/><stop offset="1" stop-color="#d79a72"/></linearGradient></defs>
-        <path d="M30 200 C 30 150, 55 120, 95 112 L 160 108 C 185 110, 200 130, 200 160 L 200 200 Z" fill="url(#sk)"/>
-        <path d="M40 150 C 20 120, 18 95, 30 78 C 38 68, 52 70, 56 82 C 62 100, 66 118, 78 132 Z" fill="url(#sk2)"/>
-        <ellipse cx="36" cy="80" rx="9" ry="7" fill="#f6d6bd" opacity=".8" transform="rotate(-30 36 80)"/>
-      </svg>
-      <div class="fingers"><i></i><i></i><i></i></div>
-    </div>
-  </div>
+  <img class="hero" src="intro.jpg" alt="메뉴판에 휴대폰을 비추자 요리 이름 위에 발음과 설명, 원화 가격이 뜬 모습" width="1080" height="1500">
   <p class="tag">메뉴판에 휴대폰을 비추기만 하세요</p>
   <button id="start" type="button">카메라 켜기</button>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
