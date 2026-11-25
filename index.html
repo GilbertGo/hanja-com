@@ -29,7 +29,6 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 #stage{position:fixed;inset:0}
 #v,#still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}#still{object-fit:contain;background:#000}
 #layer{position:absolute;inset:0;pointer-events:none}
-.box{position:absolute;border:2px solid rgba(255,211,77,.7);border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
 .ch{position:absolute;transform:translateY(-100%);display:flex;flex-direction:column;align-items:center;padding-bottom:3px}
 .ch b,.ch i,.ln b,.ln i{display:block;font-style:normal;background:rgba(0,0,0,.28);text-shadow:0 0 3px #000,0 0 2px #000,0 1px 1px #000;padding:0 4px;white-space:nowrap;line-height:1.25}
 .ch b{font-size:13px;border-radius:5px 5px 0 0}
@@ -102,19 +101,32 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .menu{background:#fff6e0;border-radius:12px;padding:10px 14px;margin-top:14px;color:#5a1a0a}
 .menu .hz{margin:0;font-size:28px;font-weight:900}.menu .md{margin:2px 0 6px;font-size:15px;font-weight:800;color:#7a2a10}
 .menu span{display:inline-block;background:#ffd34d;color:#1d1a17;font-weight:900;border-radius:8px;padding:3px 12px;font-size:15px}
-.scene{position:relative;height:clamp(380px,112vw,440px)}
-.paper{position:absolute;left:0;top:0;width:74%;background:#fbf1dc;border:3px solid #a3121f;outline:2px solid #d9a441;outline-offset:-9px;border-radius:6px;padding:16px 16px 18px;transform:rotate(-3deg);box-shadow:0 10px 24px rgba(0,0,0,.35);color:#3a1a0a}
-.mt{margin:0 0 8px;text-align:center;font-size:30px;font-weight:900;color:#a3121f;letter-spacing:6px}
-.mi{display:flex;align-items:baseline;gap:4px;margin:0;padding:5px 0;font-size:17px;font-weight:700;border-top:1px dashed #d9b98a;white-space:nowrap}
-.mi i{flex:1;border-bottom:2px dotted #b89a70;margin:0 2px}
-.mi.hl{background:rgba(255,211,77,.35)}
-.ph{position:absolute;right:0;bottom:0;width:76%;background:#141210;border-radius:26px;padding:9px;transform:rotate(5deg);box-shadow:0 16px 34px rgba(0,0,0,.45)}
-.pscr{position:relative;background:#f3e6c8;border-radius:19px;padding:30px 12px 14px;overflow:hidden}
-.rec{position:absolute;left:12px;top:8px;font-size:11px;font-weight:800;color:#c8102e}
-.cn{position:absolute;width:18px;height:18px;border-color:#fff;border-style:solid;filter:drop-shadow(0 0 1px #000)}
-.c1{left:6px;top:24px;border-width:3px 0 0 3px}.c2{right:6px;top:24px;border-width:3px 3px 0 0}.c3{left:6px;bottom:6px;border-width:0 0 3px 3px}.c4{right:6px;bottom:6px;border-width:0 3px 3px 0}
-.mline{display:flex;align-items:flex-end;gap:3px;color:#3a1a0a;white-space:nowrap}.col{display:flex;flex-direction:column;align-items:center;flex:1}.cp{background:rgba(29,26,23,.85);border-radius:6px;width:100%;text-align:center;padding:1px 0}.cp b{display:block;font-size:11px}.cp i{display:block;font-style:normal;font-weight:900;font-size:13px;color:#fff}.col .hz{font-size:clamp(28px,9vw,38px);font-weight:700;line-height:1.15}
-.mrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}.mdesc{background:#5a1a0a;color:#ffe9c7;font-weight:800;font-size:13px;border-radius:6px;padding:2px 8px}.won{background:#ffd34d;color:#1d1a17;font-weight:900;font-size:13px;border-radius:6px;padding:2px 8px}
+.scene{position:relative;height:clamp(400px,120vw,470px);margin:0 -22px;overflow:hidden}
+.table{position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,rgba(255,220,170,.18),transparent 60%),repeating-linear-gradient(92deg,#5b3a22 0 6px,#53351f 6px 9px,#614027 9px 17px,#4e311c 17px 20px);box-shadow:inset 0 0 60px rgba(0,0,0,.55)}
+.paper{position:absolute;left:4%;top:4%;width:80%;background:linear-gradient(180deg,#fffaf0,#f3e6cc);border-radius:4px;transform:perspective(900px) rotateX(18deg) rotateZ(-6deg);transform-origin:50% 0;box-shadow:0 18px 26px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.3);color:#3a1a0a;overflow:hidden}
+.ph1{background:#a3121f;color:#f6d58a;font-weight:900;font-size:19px;padding:9px 14px;letter-spacing:2px;border-bottom:3px solid #d9a441}
+.ph1 span{display:inline-block;background:#f6d58a;color:#a3121f;border-radius:50%;width:28px;height:28px;text-align:center;line-height:28px;margin-right:6px}
+.mi{display:flex;align-items:baseline;gap:4px;margin:0 14px;padding:7px 0;font-size:17px;font-weight:700;border-bottom:1px solid #e3cfa8;white-space:nowrap}
+.mi i{flex:1;border-bottom:2px dotted #b89a70;margin:0 3px}
+.mi span:last-child{color:#a3121f;font-weight:900}
+.phone3{position:absolute;right:3%;bottom:-6%;width:56%;aspect-ratio:9/17;background:linear-gradient(135deg,#3a3a3e,#0d0d10 40%,#1c1c20);border-radius:30px;padding:6px;transform:rotate(-7deg);box-shadow:-22px 26px 34px rgba(0,0,0,.55),0 0 0 1px #555 inset}
+.btn1,.btn2{position:absolute;right:-3px;width:3px;background:#2a2a2e;border-radius:2px}.btn1{top:22%;height:12%}.btn2{top:38%;height:7%}
+.scr3{position:relative;height:100%;border-radius:25px;overflow:hidden;background:#000;display:flex;flex-direction:column}
+.hole{position:absolute;top:7px;left:50%;width:9px;height:9px;margin-left:-4px;border-radius:50%;background:#111;box-shadow:0 0 0 2px #000}
+.cam{position:relative;flex:1;overflow:hidden;background:linear-gradient(180deg,#e9dcc0,#d8c7a3)}
+.feed{position:absolute;left:-4%;top:14%;width:118%;transform:rotate(4deg);color:#3a1a0a;filter:blur(.25px)}
+.sel{display:inline-block;margin-left:8%;outline:2px solid rgba(255,211,77,.85);outline-offset:2px;border-radius:3px}.fl{margin:0;display:flex;align-items:flex-end;gap:1px;font-size:clamp(20px,6.2vw,27px);font-weight:700;white-space:nowrap}
+.fc{display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.fc em,.fc u{font-style:normal;text-decoration:none;font-family:-apple-system,"Noto Sans KR",sans-serif;background:rgba(0,0,0,.3);text-shadow:0 0 3px #000,0 0 2px #000;padding:0 3px;line-height:1.25}
+.fc em{font-size:10px;font-weight:800;border-radius:4px 4px 0 0}.fc u{font-size:12px;font-weight:900;color:#fff;border-radius:0 0 4px 4px;margin-bottom:2px}
+.fp{font-size:.62em;color:#a3121f;font-weight:900;margin-left:8px;padding-bottom:4px}
+.tagw2{display:inline-block;margin:4px 0 0 8%;background:#ffd34d;color:#1d1a17;font:900 10px -apple-system,"Noto Sans KR",sans-serif;border-radius:5px;padding:2px 5px}
+.fb{display:inline-block;margin:6px 0 0 8%;font-family:-apple-system,"Noto Sans KR",sans-serif;background:rgba(40,20,10,.5);color:#ffe9c7;text-shadow:0 0 3px #000;font-size:11px;font-weight:800;border-radius:5px;padding:1px 6px}
+.fl2{margin:10px 0 0 8%;font-size:clamp(22px,7vw,30px);font-weight:700;opacity:.8;white-space:nowrap}
+.cam::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.35))}
+.bar3{display:flex;gap:4px;padding:7px 6px 10px;background:#1f1a17}
+.bar3 span{flex:1;background:#3a322c;color:#fff;border-radius:8px;text-align:center;font-size:10px;font-weight:800;padding:6px 0}.bar3 .stop{flex:1.6;background:#c8102e}
+.glare{position:absolute;inset:6px;border-radius:25px;background:linear-gradient(115deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 32%);pointer-events:none}
 .pills{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pills span{background:#9e0c24;color:#fff;border-radius:999px;text-align:center;font-weight:800;font-size:15px;padding:9px 6px}
 #start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:19px;font-family:inherit}
@@ -142,21 +154,31 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 <div id="intro"><div class="iw">
   <h2>한자 카메라</h2>
   <div class="scene" aria-hidden="true">
+    <div class="table"></div>
     <div class="paper">
-      <p class="mt hz">菜 单</p>
-      <p class="mi hz hl"><span>农家小炒肉</span><i></i><span>¥38</span></p>
-      <p class="mi hz"><span>土家三下锅</span><i></i><span>¥88</span></p>
-      <p class="mi hz"><span>岩耳炖土鸡</span><i></i><span>¥98</span></p>
-      <p class="mi hz"><span>干煸四季豆</span><i></i><span>¥28</span></p>
-      <p class="mi hz"><span>酸辣土豆丝</span><i></i><span>¥18</span></p>
+      <div class="ph1 hz"><span>湘</span>农家菜 · 菜单</div>
+      <p class="mi hz"><span>农家小炒肉</span><i></i><span>38元</span></p>
+      <p class="mi hz"><span>土家三下锅</span><i></i><span>88元</span></p>
+      <p class="mi hz"><span>岩耳炖土鸡</span><i></i><span>98元</span></p>
+      <p class="mi hz"><span>干煸四季豆</span><i></i><span>28元</span></p>
+      <p class="mi hz"><span>酸辣土豆丝</span><i></i><span>18元</span></p>
+      <p class="mi hz"><span>米豆腐</span><i></i><span>12元</span></p>
     </div>
-    <div class="ph">
-      <div class="pscr">
-        <span class="rec">● 카메라</span>
-        <span class="cn c1"></span><span class="cn c2"></span><span class="cn c3"></span><span class="cn c4"></span>
-        <div class="mline"><div class="col"><div class="cp"><b class="t2">nóng</b><i>농</i></div><span class="hz">农</span></div><div class="col"><div class="cp"><b class="t1">jiā</b><i>가</i></div><span class="hz">家</span></div><div class="col"><div class="cp"><b class="t3">xiǎo</b><i>소</i></div><span class="hz">小</span></div><div class="col"><div class="cp"><b class="t3">chǎo</b><i>초</i></div><span class="hz">炒</span></div><div class="col"><div class="cp"><b class="t4">ròu</b><i>육</i></div><span class="hz">肉</span></div></div>
-        <div class="mrow"><span class="mdesc">🌶️🌶️ 돼지고기 고추 볶음</span><span class="won">¥38 → ₩7,620</span></div>
+    <div class="phone3">
+      <span class="btn1"></span><span class="btn2"></span>
+      <div class="scr3">
+        <div class="cam">
+          <div class="feed hz">
+            <div class="sel"><p class="fl"><span class="fc"><em class="t2">nóng</em><u>농</u>农</span><span class="fc"><em class="t1">jiā</em><u>가</u>家</span><span class="fc"><em class="t3">xiǎo</em><u>소</u>小</span><span class="fc"><em class="t3">chǎo</em><u>초</u>炒</span><span class="fc"><em class="t4">ròu</em><u>육</u>肉</span><span class="fp">38元</span></p>
+            </div><p class="fb">🌶️🌶️ 돼지고기 고추 볶음</p><br><span class="tagw2">¥38 ≈ ₩7,620</span>
+            <p class="fl2">土家三下锅 <span class="fp">88元</span></p><p class="fl2">岩耳炖土鸡 <span class="fp">98元</span></p><p class="fl2">干煸四季豆 <span class="fp">28元</span></p>
+          </div>
+          
+        </div>
+        <div class="bar3"><span>사진</span><span class="stop">멈추기</span><span>손전등</span></div>
+        <span class="hole"></span>
       </div>
+      <span class="glare"></span>
     </div>
   </div>
   <p class="tag">메뉴판에 휴대폰을 비추기만 하세요</p>
