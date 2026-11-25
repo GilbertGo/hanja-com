@@ -95,6 +95,9 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .phone{background:#141210;border-radius:30px;padding:10px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .scr{background:#2e3a2f;border-radius:22px;padding:16px 16px 16px}
 .chips{display:flex;gap:6px;padding-left:10px}
+.mscr{background:#fff6e0;padding:14px 12px}.mscr .chips{padding-left:4px}.mscr .chips div{width:52px}
+.mline{display:flex;align-items:flex-end;gap:4px;color:#5a1a0a;white-space:nowrap}.col{display:flex;flex-direction:column;align-items:center;flex:1}.cp{background:rgba(29,26,23,.88);border-radius:7px;width:100%;text-align:center;padding:2px 0}.cp b{display:block;font-size:12px}.cp i{display:block;font-style:normal;font-weight:900;font-size:15px;color:#fff}.col .hz{font-size:clamp(30px,10vw,44px);font-weight:900;line-height:1.15}.mline .pr{font-size:clamp(18px,6vw,26px);font-weight:900;margin-left:6px;padding-bottom:6px}
+.mrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}.mdesc{background:#5a1a0a;color:#ffe9c7;font-weight:800;font-size:15px;border-radius:6px;padding:3px 10px}.won{background:#ffd34d;color:#1d1a17;font-weight:900;font-size:15px;border-radius:6px;padding:3px 10px}
 .chips div{background:rgba(0,0,0,.85);border-radius:8px;width:56px;text-align:center;padding:3px 0}
 .chips b{display:block;font-size:14px}.chips i{display:block;font-style:normal;font-weight:900;font-size:17px;color:#fff}
 .sign{background:#0b7a3b;color:#fff;border-radius:6px;font-size:48px;font-weight:900;padding:6px 14px;margin-top:4px;letter-spacing:4px}
@@ -128,12 +131,11 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
   <h2>한자 카메라</h2>
-  <div class="phone" aria-hidden="true"><div class="scr">
-    <div class="chips"><div><b class="t1">ān</b><i>안</i></div><div><b class="t2">quán</b><i>전</i></div><div><b class="t1">chū</b><i>출</i></div><div><b class="t3">kǒu</b><i>구</i></div></div>
-    <div class="sign hz">安全出口</div>
-    <span class="mean">비상구</span>
+  <div class="phone" aria-hidden="true"><div class="scr mscr">
+    <div class="mline"><div class="col"><div class="cp"><b class="t2">nóng</b><i>농</i></div><span class="hz">农</span></div><div class="col"><div class="cp"><b class="t1">jiā</b><i>가</i></div><span class="hz">家</span></div><div class="col"><div class="cp"><b class="t3">xiǎo</b><i>소</i></div><span class="hz">小</span></div><div class="col"><div class="cp"><b class="t3">chǎo</b><i>초</i></div><span class="hz">炒</span></div><div class="col"><div class="cp"><b class="t4">ròu</b><i>육</i></div><span class="hz">肉</span></div><span class="hz pr">38元</span></div>
+    <div class="mrow"><span class="mdesc">🌶️🌶️ 돼지고기 고추 볶음</span><span class="won">₩7,620</span></div>
   </div></div>
-  <p class="tag">한자에 카메라를 비추면<br>발음·한자음·뜻이 떠요</p>
+  <p class="tag">메뉴판에 카메라를 비추면<br>발음·요리 설명·가격이 떠요</p>
   <button id="start" type="button">카메라 켜기</button>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
   <div id="ios" hidden>📲 <b>홈 화면에 설치:</b> 아래쪽 공유 버튼 <span class="ib">⬆︎</span> → <b>홈 화면에 추가</b></div>
