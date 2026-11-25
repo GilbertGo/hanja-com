@@ -27,9 +27,13 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 .ln b,.ln i{background:none;padding:0;white-space:normal}
 .ln b{font-size:13px;color:#ffd34d}.ln i{font-size:15px;font-weight:800}
 .gist{position:absolute;background:rgba(200,16,46,.92);color:#fff;font-size:14px;font-weight:700;border-radius:6px;padding:1px 7px;line-height:1.35}
+.price{position:absolute;transform:translateY(-50%);background:#ffd34d;color:#1d1a17;font-size:14px;font-weight:900;border-radius:6px;padding:1px 7px;white-space:nowrap}
+.row .pr{grid-column:2;font-size:14px;font-weight:800;color:#ffd34d}
+.pd{font-size:18px;font-weight:800;margin:10px 0 0;background:#fff3c4;border-radius:10px;padding:8px 12px}
 .hit{position:absolute;pointer-events:auto;background:transparent;border:0;padding:0;cursor:pointer}
 .t1{color:#ff8c5a}.t2{color:#7ee08a}.t3{color:#6cb8ff}.t4{color:#e08cff}.t0{color:#ddd}
 #top{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 10px) 14px 10px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
+#rate{pointer-events:auto;border:0;background:rgba(255,211,77,.95);color:#1d1a17;font:800 13px inherit;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-left:auto;margin-right:10px}
 #top h1{margin:0;font-size:17px;font-weight:800}
 #top .lg{font-size:12px;opacity:.9}
 #st{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 56px);transform:translateX(-50%);background:rgba(200,16,46,.95);padding:8px 14px;border-radius:999px;font-size:14px;width:max-content;max-width:92vw;text-align:center}
@@ -77,7 +81,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 </head>
 <body>
 <div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="layer"></div></div>
-<div id="top"><h1>한자 카메라</h1><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
+<div id="top"><h1>한자 카메라</h1><button id="rate" type="button">1元=200.6원</button><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
 <div id="st" role="status" hidden></div>
 <div id="bar">
   <p id="count">한자에 카메라를 비춰 보세요</p>
