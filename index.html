@@ -142,7 +142,13 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .fingers i{display:block;height:34px;border-radius:0 18px 18px 0;background:linear-gradient(90deg,#c88a62,#efc29e 55%,#d79a72);box-shadow:3px 4px 6px rgba(0,0,0,.35)}
 .fingers i:nth-child(2){height:36px}.fingers i:nth-child(3){height:30px;width:90%}
 .phone3{z-index:2}
-.hero{display:block;width:calc(100% + 44px);max-width:none;margin:0 -22px;height:auto;max-height:62vh;object-fit:cover;object-position:50% 30%}
+.slides{position:relative;margin:0 -22px;aspect-ratio:1080/1500;max-height:62vh;overflow:hidden;background:#3a2a20;margin-left:-22px;margin-right:-22px;width:calc(100% + 44px)}
+.hero{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:0;transition:opacity .8s ease}
+.hero.on{opacity:1}
+.dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px}
+.dots button{border:0;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;font-weight:800;font-size:13px;font-family:inherit;padding:6px 12px;min-height:32px}
+.dots button.on{background:#fff;color:#c8102e}
+@media(prefers-reduced-motion:reduce){.hero{transition:none}}
 .pills{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pills span{background:#9e0c24;color:#fff;border-radius:999px;text-align:center;font-weight:800;font-size:15px;padding:9px 6px}
 #start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:19px;font-family:inherit}
@@ -169,7 +175,12 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
   <h2>한자 카메라</h2>
-  <img class="hero" src="intro.jpg" alt="한자에 휴대폰을 비추자 요리 이름 위에 발음과 설명, 원화 가격이 뜬 모습" width="1080" height="1500">
+  <div class="slides" id="slides">
+    <img class="hero on" src="intro_street.jpg" alt="가게 간판에 휴대폰을 비추자 발음과 한자음이 뜬 모습" width="1080" height="1500">
+    <img class="hero" src="intro_menu.jpg" alt="메뉴판에 비추자 요리 설명과 원화 가격이 뜬 모습" width="1080" height="1500" loading="lazy">
+    <img class="hero" src="intro_station.jpg" alt="역 안내판에 비추자 출구·매표소·화장실 뜻이 뜬 모습" width="1080" height="1500" loading="lazy">
+    <div class="dots"><button type="button" class="on" data-s="0">간판</button><button type="button" data-s="1">메뉴판</button><button type="button" data-s="2">안내판</button></div>
+  </div>
   <p class="tag">간판 · 메뉴판 · 안내문<br>한자에 비추기만 하세요</p>
   <button id="start" type="button">카메라 켜기</button>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
