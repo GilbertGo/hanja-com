@@ -168,7 +168,8 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 @media(prefers-reduced-motion:reduce){.hero{transition:none}}
 .pills{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pills span{background:#9e0c24;color:#fff;border-radius:999px;text-align:center;font-weight:800;font-size:15px;padding:9px 6px}
-#start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:19px;font-family:inherit}
+#start{flex:1;min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:18px;font-family:inherit}
+.two{display:flex;gap:8px}#photo2l{flex:1;min-height:56px;border:2px solid #fff;border-radius:16px;color:#fff;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer}#photo2l input{position:absolute;opacity:0;width:1px;height:1px}
 #install{min-height:52px;border:0;border-radius:16px;background:#ffd34d;color:#1d1a17;font-weight:900;font-size:17px;font-family:inherit}
 #ios{background:rgba(0,0,0,.25);border-radius:14px;padding:10px 14px;font-size:15px}#ios .ib{display:inline-block;background:#fff;color:#1c7ed6;border-radius:6px;padding:0 6px;font-weight:900}
 #share2{min-height:44px;border:0;text-decoration:underline;border-radius:16px;background:transparent;color:#fff;font-weight:800;font-size:16px;font-family:inherit}
@@ -201,7 +202,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
     <div class="dots"><button type="button" class="on" data-s="0">간판</button><button type="button" data-s="1">메뉴판</button><button type="button" data-s="2">안내판</button></div>
   </div>
   <p class="tag">간판 · 메뉴판 · 안내문<br>한자에 비추기만 하세요</p>
-  <button id="start" type="button">카메라 켜기</button>
+  <div class="two"><button id="start" type="button">📷 카메라 켜기</button><label id="photo2l">🖼 사진 불러오기<input type="file" id="photo2" accept="image/*"></label></div>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
   <div id="ios" hidden>📲 <b>홈 화면에 설치:</b> 아래쪽 공유 버튼 <span class="ib">⬆︎</span> → <b>홈 화면에 추가</b></div>
   <button id="share2" type="button">친구에게 앱 공유하기</button>
