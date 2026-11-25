@@ -25,7 +25,7 @@
 <style>
 *{box-sizing:border-box;min-width:0;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;overflow:hidden}
-.hz{font-family:"PingFang SC","Noto Sans SC","Noto Sans CJK SC","Source Han Sans SC",serif}
+.hz{font-family:"PingFang SC","Noto Sans SC","Noto Sans CJK SC","Source Han Sans SC","Microsoft YaHei",sans-serif}
 #stage{position:fixed;inset:0}
 #v,#still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}#still{object-fit:contain;background:#000}
 #layer{position:absolute;inset:0;pointer-events:none}
@@ -87,11 +87,11 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .cc .p{font-weight:700}.cc .hz{font-size:40px;line-height:1.15}.cc .tr{font-size:13px;color:#6b625a}.cc .h{font-size:13px;font-weight:700;text-align:center}
 #intro{position:fixed;inset:0;z-index:9;background:#c8102e;overflow-y:auto;padding:calc(env(safe-area-inset-top) + 22px) 22px calc(env(safe-area-inset-bottom) + 22px)}
 #intro[hidden]{display:none}
-.iw{max-width:440px;margin:0 auto;display:flex;flex-direction:column;gap:14px;min-height:100%;justify-content:center}
+.iw{max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:16px;min-height:100%;justify-content:center}
 .head{display:flex;align-items:center;gap:14px}
 #intro .mark{font-size:76px;line-height:1;font-weight:900;margin:0;color:#ffd34d}
-#intro h2{font-size:36px;line-height:1.05;margin:0;font-weight:900;color:#fff}
-.tag{margin:6px 0 0;font-size:19px;font-weight:800;color:#ffe3a0}
+#intro h2{font-size:34px;line-height:1.05;margin:0 0 6px;font-weight:900;color:#fff;text-align:center}
+.tag{margin:6px 0 10px;font-size:21px;line-height:1.4;font-weight:800;color:#fff;text-align:center}
 .phone{background:#141210;border-radius:30px;padding:10px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .scr{background:#2e3a2f;border-radius:22px;padding:16px 16px 16px}
 .chips{display:flex;gap:6px;padding-left:10px}
@@ -107,7 +107,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 #start{min-height:56px;border:0;border-radius:16px;background:#fff;color:#c8102e;font-weight:900;font-size:19px;font-family:inherit}
 #install{min-height:52px;border:0;border-radius:16px;background:#ffd34d;color:#1d1a17;font-weight:900;font-size:17px;font-family:inherit}
 #ios{background:rgba(0,0,0,.25);border-radius:14px;padding:10px 14px;font-size:15px}#ios .ib{display:inline-block;background:#fff;color:#1c7ed6;border-radius:6px;padding:0 6px;font-weight:900}
-#share2{min-height:48px;border:2px solid rgba(255,255,255,.7);border-radius:16px;background:transparent;color:#fff;font-weight:800;font-size:16px;font-family:inherit}
+#share2{min-height:44px;border:0;text-decoration:underline;border-radius:16px;background:transparent;color:#fff;font-weight:800;font-size:16px;font-family:inherit}
 #intro small{display:block;opacity:.85;font-size:13px;text-align:center}
 @media(max-height:720px){.menu{display:none}#intro .mark{font-size:60px}}
 </style>
@@ -127,22 +127,18 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 </div>
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
-  <div class="head">
-    <p class="mark hz">汉</p>
-    <div><h2>한자 카메라</h2><p class="tag">비추면 바로 읽어줘요</p></div>
-  </div>
+  <h2>한자 카메라</h2>
   <div class="phone" aria-hidden="true"><div class="scr">
     <div class="chips"><div><b class="t1">ān</b><i>안</i></div><div><b class="t2">quán</b><i>전</i></div><div><b class="t1">chū</b><i>출</i></div><div><b class="t3">kǒu</b><i>구</i></div></div>
     <div class="sign hz">安全出口</div>
     <span class="mean">비상구</span>
-    <div class="menu"><p class="hz">农家小炒肉</p><p class="md">🌶️🌶️ 돼지고기 고추 볶음</p><span>¥38 → ₩7,620</span></div>
   </div></div>
-  <div class="pills"><span>중국어 발음</span><span>한국 한자음</span><span>뜻·요리 설명</span><span>₩ 가격 환산</span></div>
+  <p class="tag">한자에 카메라를 비추면<br>발음·한자음·뜻이 떠요</p>
   <button id="start" type="button">카메라 켜기</button>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
   <div id="ios" hidden>📲 <b>홈 화면에 설치:</b> 아래쪽 공유 버튼 <span class="ib">⬆︎</span> → <b>홈 화면에 추가</b></div>
   <button id="share2" type="button">친구에게 앱 공유하기</button>
-  <small>인식은 휴대폰 안에서 해요. 처음 한 번 엔진(약 30MB)을 받으면 인터넷 없이도 돼요.</small>
+  <small>처음 한 번만 와이파이에서 열어 주세요</small>
 </div></div>
 <script type="module" src="app.js"></script>
 </body>
