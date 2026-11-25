@@ -46,6 +46,23 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 .price.ov{transform:translate(-50%,-50%);font-size:12px;padding:1px 6px;background:rgba(255,211,77,.93);box-shadow:0 1px 3px rgba(0,0,0,.35)}
 .pill{position:absolute;transform:translateY(-50%);background:rgba(0,0,0,.42);border-radius:7px;padding:1px 7px 2px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 0 3px #000,0 1px 1px #000}
 .pill b{display:block;font-size:11px;color:#ffd34d;overflow:hidden;text-overflow:ellipsis}.pill i{display:block;font-style:normal;font-size:13px;font-weight:800;color:#fff;overflow:hidden;text-overflow:ellipsis}
+#layer.moving{opacity:.25;transition:opacity .2s}
+#aim{position:absolute;pointer-events:none;box-shadow:0 0 0 2000px rgba(0,0,0,.35);border-radius:10px}
+#aim i{position:absolute;width:26px;height:26px;border:4px solid #ffd34d}
+#aim i:nth-child(1){left:-2px;top:-2px;border-width:4px 0 0 4px;border-radius:10px 0 0 0}#aim i:nth-child(2){right:-2px;top:-2px;border-width:4px 4px 0 0;border-radius:0 10px 0 0}#aim i:nth-child(3){left:-2px;bottom:-2px;border-width:0 0 4px 4px;border-radius:0 0 0 10px}#aim i:nth-child(4){right:-2px;bottom:-2px;border-width:0 4px 4px 0;border-radius:0 0 10px 0}
+#aimc{position:absolute;left:7%;right:7%;background:rgba(20,17,15,.92);border-radius:14px;padding:10px 14px;color:#fff;z-index:2}
+#aimc p{margin:0}#aimc .ap{font-size:17px;font-weight:800}#aimc .ak{font-size:17px;font-weight:800;margin-top:2px}#aimc .aw{font-size:15px;font-weight:900;color:#ffd34d;margin-top:4px}#aimc .ah{color:#ddd;font-size:15px}
+#aimc .am{margin-top:8px;border:0;border-radius:10px;background:#3a322c;color:#fff;font-weight:800;font-size:14px;font-family:inherit;min-height:40px;padding:0 14px}
+#aimb.on{background:#ffd34d;color:#1d1a17}
+.papago{display:block;margin:10px 0 0;text-align:center;background:#1ec800;color:#fff;font-weight:800;border-radius:12px;padding:11px;text-decoration:none}
+#talk{pointer-events:auto;border:0;background:#fff;color:#1d1a17;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:8px}
+.pcat{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.pcat button{border:0;border-radius:999px;background:#e9e2d8;font-weight:800;font-size:14px;font-family:inherit;min-height:38px;padding:0 14px;color:#1d1a17}.pcat button.on{background:#c8102e;color:#fff}
+.plist{display:grid;gap:6px}.pr2{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid #e6ddd2;background:#fff;border-radius:12px;padding:10px 14px;font-family:inherit;color:#1d1a17}.pr2 .hz{font-size:21px;font-weight:700}.pr2 span+span{font-size:14px;color:#6b625a}
+#show{position:fixed;inset:0;z-index:20;background:#fff;color:#111;display:flex;flex-direction:column;justify-content:center;padding:24px calc(env(safe-area-inset-right) + 22px) calc(env(safe-area-inset-bottom) + 24px) calc(env(safe-area-inset-left) + 22px);text-align:center}
+#show[hidden]{display:none}
+#show .sz{font-size:clamp(44px,14vw,96px);font-weight:900;line-height:1.2;margin:0;word-break:break-all}
+#show .sp{font-size:22px;color:#c8102e;font-weight:700;margin:16px 0 4px}#show .sk{font-size:18px;color:#6b625a;margin:0}
+#show .sb{display:flex;gap:10px;margin-top:28px}#show .sb button{flex:1;min-height:54px;border:0;border-radius:14px;font-weight:900;font-size:17px;font-family:inherit;background:#c8102e;color:#fff}#show .sb button+button{background:#e9e2d8;color:#1d1a17}
 .hit{position:absolute;pointer-events:auto;background:transparent;border:0;padding:0;cursor:pointer}
 .t1{color:#ff8c5a}.t2{color:#7ee08a}.t3{color:#6cb8ff}.t4{color:#e08cff}.t0{color:#ddd}
 #top{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 10px) 14px 10px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
@@ -160,18 +177,20 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 </style>
 </head>
 <body>
-<div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="layer"></div></div>
-<div id="top"><h1>한자 카메라</h1><button id="rate" type="button">¥1=₩200.6</button><button id="share" type="button">공유</button><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
+<div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="layer"></div><div id="aim" hidden><i></i><i></i><i></i><i></i></div><div id="aimc" hidden></div></div>
+<div id="top"><h1>한자 카메라</h1><button id="rate" type="button">¥1=₩200.6</button><button id="talk" type="button">보여주기</button><button id="share" type="button">공유</button><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
 <div id="st" role="status" hidden></div>
 <div id="bar">
   <p id="count">한자에 카메라를 비춰 보세요</p>
   <div id="list"></div>
   <div class="ctl">
     <label>사진<input type="file" id="photo" accept="image/*"></label>
+    <button id="aimb" type="button">조준</button>
     <button id="freeze" type="button">멈추기</button>
     <button id="torch" type="button" hidden>손전등</button>
   </div>
 </div>
+<div id="show" hidden></div>
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
   <h2>한자 카메라</h2>
