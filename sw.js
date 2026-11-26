@@ -1,4 +1,4 @@
-const C='hanzi-cam-v33';
+const C='hanzi-cam-v34';
 const PRE=['./','index.html','app.js','hun.json','words.json','ko.json','food.json','zhko.json','en.json','manifest.json','intro_street.jpg','intro_menu.jpg','intro_station.jpg','icon-192.png','models/ch_PP-OCRv4_det_infer.onnx','models/ch_PP-OCRv4_rec_infer.onnx','models/ppocr_keys_v1.txt','ort/ort-wasm-simd-threaded.mjs','ort/ort-wasm-simd-threaded.wasm'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(PRE.filter(p=>!p.endsWith('.onnx')&&!p.endsWith('.wasm'))).catch(()=>{})))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
