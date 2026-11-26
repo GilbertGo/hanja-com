@@ -1,7 +1,7 @@
-const C='hanzi-cam-v47';
+const C='hanzi-cam-v48';
 // 인식 엔진(모델·wasm·opencv)은 버전과 상관없이 따로 보관 → 앱을 고쳐도 다시 받지 않음
 const E='hanzi-engine-1';
-const CH=["chunk-3RNHDNP5.js", "chunk-BW7VIC66.js", "chunk-DD2F7PD6.js", "chunk-HIYUQRJ6.js", "chunk-NTIUPAKQ.js"];
+const CH=["chunk-3RNHDNP5.js", "chunk-6SLTANZM.js", "chunk-BW7VIC66.js", "chunk-DD2F7PD6.js", "chunk-HIYUQRJ6.js", "chunk-HJCWMV6D.js", "chunk-IIIDMEIH.js", "chunk-MSHQDCYT.js", "chunk-NTIUPAKQ.js", "chunk-P2BH57ES.js", "chunk-RFY7EFDI.js"];
 const PRE=['./','index.html','app.js','hun.json','words.json','ko.json','food.json','zhko.json','manifest.json','intro_street.jpg','intro_menu.jpg','intro_station.jpg','icon-192.png'];
 const isEng=p=>/\/(models|ort)\//.test(p)||/\/chunk-[^/]+\.js$/.test(p);
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(PRE)).catch(()=>{}))});
