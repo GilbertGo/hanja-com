@@ -55,7 +55,7 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 #aimc .am{margin-top:8px;border:0;border-radius:10px;background:#3a322c;color:#fff;font-weight:800;font-size:14px;font-family:inherit;min-height:40px;padding:0 14px}
 #aimb.on{background:#ffd34d;color:#1d1a17}
 .papago{display:block;margin:10px 0 0;text-align:center;background:#1ec800;color:#fff;font-weight:800;border-radius:12px;padding:11px;text-decoration:none}
-#talk{pointer-events:auto;border:0;background:#fff;color:#1d1a17;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:8px}
+#talk{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:8px}
 .pcat{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.pcat button{border:0;border-radius:999px;background:#e9e2d8;font-weight:800;font-size:14px;font-family:inherit;min-height:38px;padding:0 14px;color:#1d1a17}.pcat button.on{background:#c8102e;color:#fff}
 .plist{display:grid;gap:6px}.pr2{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid #e6ddd2;background:#fff;border-radius:12px;padding:10px 14px;font-family:inherit;color:#1d1a17}.pr2 .hz{font-size:21px;font-weight:700}.pr2 span+span{font-size:14px;color:#6b625a}
 #show{position:fixed;inset:0;z-index:20;background:#fff;color:#111;display:flex;flex-direction:column;justify-content:center;padding:24px calc(env(safe-area-inset-right) + 22px) calc(env(safe-area-inset-bottom) + 24px) calc(env(safe-area-inset-left) + 22px);text-align:center}
@@ -74,14 +74,14 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 .hit{position:absolute;pointer-events:auto;background:transparent;border:0;padding:0;cursor:pointer}
 .t1{color:#ff8c5a}.t2{color:#7ee08a}.t3{color:#6cb8ff}.t4{color:#e08cff}.t0{color:#ddd}
 #top{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 10px) 14px 10px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
-#rate{pointer-events:auto;border:0;background:rgba(255,211,77,.95);color:#1d1a17;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-left:auto;margin-right:10px}
-#share{pointer-events:auto;border:0;background:rgba(255,255,255,.92);color:#c8102e;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:10px}
+#rate{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#ffe08a;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-left:auto;margin-right:10px}
+#share{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:10px}
 .qr{width:min(260px,70vw);margin:14px auto;background:#fff;padding:6px;border-radius:12px}.qr svg{display:block;width:100%;height:auto}
 .url{text-align:center;font-weight:700;word-break:break-all;margin:0 0 12px;user-select:all;-webkit-user-select:all}
 .sh{display:flex;gap:8px}.sh button{flex:1;min-height:50px;border:0;border-radius:14px;font-weight:800;font-size:16px;font-family:inherit;background:#c8102e;color:#fff}.sh button+button{background:#e9e2d8;color:#1d1a17}
 #top h1{margin:0;font-size:17px;font-weight:800}
 #top .lg{font-size:12px;opacity:.9}@media(max-width:420px){#top .lg{display:none}}
-#st{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 56px);transform:translateX(-50%);background:rgba(200,16,46,.95);padding:8px 14px;border-radius:999px;font-size:14px;width:max-content;max-width:92vw;text-align:center}
+#st{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 56px);transform:translateX(-50%);background:rgba(20,20,20,.78);padding:7px 14px;border-radius:999px;font-size:13px;width:max-content;max-width:92vw;text-align:center}
 #bar{position:fixed;left:0;right:0;bottom:0;background:rgba(20,17,15,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 12px calc(env(safe-area-inset-bottom) + 10px);border-radius:18px 18px 0 0}
 #count{font-size:13px;color:#bbb;margin:0 4px 6px}
 #list{max-height:26vh;overflow-y:auto;display:grid;gap:6px;margin-bottom:10px}
@@ -266,7 +266,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
     <div class="dots"><button type="button" class="on" data-s="0">간판</button><button type="button" data-s="1">메뉴판</button><button type="button" data-s="2">안내판</button></div>
   </div>
   <p class="tag">간판 · 메뉴판 · 안내문<br>한자에 비추기만 하세요</p>
-  <div class="two"><button id="start" type="button">📷 카메라 켜기</button><label id="photo2l">🖼 사진 불러오기<input type="file" id="photo2" accept="image/*"></label></div>
+  <div class="two"><button id="start" type="button">카메라 켜기</button><label id="photo2l">사진 불러오기<input type="file" id="photo2" accept="image/*"></label></div>
   <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
   <div id="ios" hidden>📲 <b>홈 화면에 설치:</b> 아래쪽 공유 버튼 <span class="ib">⬆︎</span> → <b>홈 화면에 추가</b></div>
   <button id="share2" type="button">친구에게 앱 공유하기</button>
