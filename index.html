@@ -56,7 +56,7 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 #aimpad{position:absolute;inset:0;touch-action:none}
 #aimb.on{background:#ffd34d;color:#1d1a17}
 .papago{display:block;margin:10px 0 0;text-align:center;background:#1ec800;color:#fff;font-weight:800;border-radius:12px;padding:11px;text-decoration:none}
-#talk{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:8px}
+#talk{white-space:nowrap;pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:8px}
 .pcat{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.pcat button{border:0;border-radius:999px;background:#e9e2d8;font-weight:800;font-size:14px;font-family:inherit;min-height:38px;padding:0 14px;color:#1d1a17}.pcat button.on{background:#c8102e;color:#fff}
 .plist{display:grid;gap:6px}.pr2{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid #e6ddd2;background:#fff;border-radius:12px;padding:10px 14px;font-family:inherit;color:#1d1a17}.pr2 .hz{font-size:21px;font-weight:700}.pr2 span+span{font-size:14px;color:#6b625a}
 #show{position:fixed;inset:0;z-index:20;background:#fff;color:#111;display:flex;flex-direction:column;justify-content:center;padding:24px calc(env(safe-area-inset-right) + 22px) calc(env(safe-area-inset-bottom) + 24px) calc(env(safe-area-inset-left) + 22px);text-align:center}
@@ -75,12 +75,12 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 .hit{position:absolute;pointer-events:auto;background:transparent;border:0;padding:0;cursor:pointer}
 .t1{color:#ff8c5a}.t2{color:#7ee08a}.t3{color:#6cb8ff}.t4{color:#e08cff}.t0{color:#ddd}
 #top{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 10px) 14px 10px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
-#rate{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#ffe08a;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-left:auto;margin-right:10px}
-#share{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:10px}
+#rate{white-space:nowrap;pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#ffe08a;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-left:auto;margin-right:10px}
+#share{white-space:nowrap;pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 10px;margin-right:0}
 .qr{width:min(260px,70vw);margin:14px auto;background:#fff;padding:6px;border-radius:12px}.qr svg{display:block;width:100%;height:auto}
 .url{text-align:center;font-weight:700;word-break:break-all;margin:0 0 12px;user-select:all;-webkit-user-select:all}
 .sh{display:flex;gap:8px}.sh button{flex:1;min-height:50px;border:0;border-radius:14px;font-weight:800;font-size:16px;font-family:inherit;background:#c8102e;color:#fff}.sh button+button{background:#e9e2d8;color:#1d1a17}
-#top h1{margin:0;font-size:17px;font-weight:800}
+#top h1{display:none}
 #top .lg{font-size:12px;opacity:.9}@media(max-width:420px){#top .lg{display:none}}
 #st{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 56px);transform:translateX(-50%);background:rgba(20,20,20,.78);padding:7px 14px;border-radius:999px;font-size:13px;width:max-content;max-width:92vw;text-align:center}
 #bar{position:fixed;left:0;right:0;bottom:0;background:rgba(20,17,15,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 12px calc(env(safe-area-inset-bottom) + 10px);border-radius:18px 18px 0 0}
@@ -95,7 +95,7 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 #freeze{background:#c8102e;flex:2}#freeze.on{background:#ffd34d;color:#1d1a17}
 #torch.on{background:#ffd34d;color:#1d1a17}
 .ctl input{position:absolute;opacity:0;width:1px;height:1px}
-#sheet{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;z-index:5}
+#sheet{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;z-index:10}
 #sheet[hidden]{display:none}
 #dbox{background:#fbf8f3;color:#1d1a17;width:100%;max-height:82vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:16px 16px calc(env(safe-area-inset-bottom) + 20px)}
 #dbox .t1{color:#d9480f}#dbox .t2{color:#2b8a3e}#dbox .t3{color:#1c7ed6}#dbox .t4{color:#9c36b5}
@@ -243,38 +243,47 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 .row .tag{grid-column:1/-1;font-size:12px;color:#bbb;margin-bottom:2px}
 .row.para{background:#3a322b}
 .dx-tag{margin:0 0 6px;font-size:12px;color:#888}
+#loc{white-space:nowrap;flex:none;pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;border-radius:999px;padding:0 12px;font:inherit;font-size:14px;font-weight:800;height:36px;margin-left:6px}
+#introLoc{display:flex;gap:8px;justify-content:center;margin:6px 0 2px}
+#introLoc button{border:1px solid rgba(255,255,255,.35);background:none;color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:14px}
+.setg{margin:14px 0 6px;font-size:13px;color:#888;font-weight:700}
+.seto{display:flex;flex-wrap:wrap;gap:8px}
+.seto button{border:1px solid #ddd;background:#fff;color:#111;border-radius:10px;padding:9px 12px;font:inherit;font-size:15px}
+.seto button.on{background:#111;color:#fff;border-color:#111}
+.setn{font-size:13px;color:#888;margin-top:10px}
+#setok{margin-top:16px;width:100%;min-height:46px;border:0;border-radius:12px;background:#111;color:#fff;font:inherit;font-size:16px;font-weight:800}
 </style>
 </head>
 <body>
 <div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="aimpad" hidden></div><div id="layer"></div><div id="aim" hidden><i></i><i></i><i></i><i></i></div><div id="aimc" hidden></div></div>
-<div id="top"><h1>한자 카메라</h1><button id="rate" type="button">¥1=₩200.6</button><button id="talk" type="button">보여주기</button><button id="share" type="button">공유</button><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
+<div id="top"><h1 data-t="title">한자 카메라</h1><button id="loc" type="button"></button><button id="rate" type="button">¥1=₩200.6</button><button id="talk" type="button" data-t="show">보여주기</button><button id="share" type="button" data-t="share">공유</button><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
 <div id="st" role="status" hidden></div>
 <div id="bar">
-  <p id="count">한자에 카메라를 비춰 보세요</p>
+  <p id="count" data-t="point">한자에 카메라를 비춰 보세요</p>
   <div id="list"></div>
   <div class="ctl">
-    <label>사진<input type="file" id="photo" accept="image/*"></label>
-    <button id="aimb" type="button">조준</button>
-    <button id="freeze" type="button">멈추기</button>
-    <button id="torch" type="button" hidden>손전등</button>
+    <label><span data-t="photo">사진</span><input type="file" id="photo" accept="image/*"></label>
+    <button id="aimb" type="button" data-t="aim">조준</button>
+    <button id="freeze" type="button" data-t="stop">멈추기</button>
+    <button id="torch" type="button" hidden data-t="torch">손전등</button>
   </div>
 </div>
 <div id="show" hidden></div>
 <div id="sheet" hidden><div id="dbox"><button id="close" type="button" aria-label="닫기">✕</button><div id="dt"></div></div></div>
 <div id="intro"><div class="iw">
-  <h2>한자 카메라</h2>
+  <h2 data-t="title">한자 카메라</h2><div id="introLoc"></div>
   <div class="slides" id="slides">
     <img class="hero on" src="intro_street.jpg" alt="가게 간판에 휴대폰을 비추자 발음과 한자음이 뜬 모습" width="1080" height="1500">
     <img class="hero" src="intro_menu.jpg" alt="메뉴판에 비추자 요리 설명과 원화 가격이 뜬 모습" width="1080" height="1500" loading="lazy">
     <img class="hero" src="intro_station.jpg" alt="역 안내판에 비추자 출구·매표소·화장실 뜻이 뜬 모습" width="1080" height="1500" loading="lazy">
     <div class="dots"><button type="button" class="on" data-s="0">간판</button><button type="button" data-s="1">메뉴판</button><button type="button" data-s="2">안내판</button></div>
   </div>
-  <p class="tag">간판 · 메뉴판 · 안내문<br>한자에 비추기만 하세요</p>
-  <div class="two"><button id="start" type="button">카메라 켜기</button><label id="photo2l">사진 불러오기<input type="file" id="photo2" accept="image/*"></label></div>
-  <button id="install" type="button" hidden>📲 홈 화면에 앱으로 설치</button>
+  <p class="tag" data-th="tag">간판 · 메뉴판 · 안내문<br>한자에 비추기만 하세요</p>
+  <div class="two"><button id="start" type="button" data-t="camOn">카메라 켜기</button><label id="photo2l"><span data-t="photoLoad">사진 불러오기</span><input type="file" id="photo2" accept="image/*"></label></div>
+  <button id="install" type="button" hidden data-t="install">홈 화면에 앱으로 설치</button>
   <div id="ios" hidden>📲 <b>홈 화면에 설치:</b> 아래쪽 공유 버튼 <span class="ib">⬆︎</span> → <b>홈 화면에 추가</b></div>
-  <button id="share2" type="button">친구에게 앱 공유하기</button>
-  <small>처음 한 번만 와이파이에서 열어 주세요</small>
+  <button id="share2" type="button" data-t="shareApp">친구에게 앱 공유하기</button>
+  <small data-t="wifi">처음 한 번만 와이파이에서 열어 주세요</small>
 </div></div>
 <script type="module" src="app.js"></script>
 </body>
