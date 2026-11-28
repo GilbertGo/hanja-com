@@ -53,6 +53,7 @@ html,body{margin:0;height:100%;background:#000;color:#fff;font:16px/1.45 -apple-
 #aimc{position:absolute;left:7%;right:7%;background:rgba(20,17,15,.92);border-radius:14px;padding:10px 14px;color:#fff;z-index:2}
 #aimc p{margin:0}#aimc .ap{font-size:17px;font-weight:800}#aimc .ak{font-size:17px;font-weight:800;margin-top:2px}#aimc .aw{font-size:15px;font-weight:900;color:#ffd34d;margin-top:4px}#aimc .ah{color:#ddd;font-size:15px}
 #aimc .am{margin-top:8px;border:0;border-radius:10px;background:#3a322c;color:#fff;font-weight:800;font-size:14px;font-family:inherit;min-height:40px;padding:0 14px}
+#aimpad{position:absolute;inset:0;touch-action:none}
 #aimb.on{background:#ffd34d;color:#1d1a17}
 .papago{display:block;margin:10px 0 0;text-align:center;background:#1ec800;color:#fff;font-weight:800;border-radius:12px;padding:11px;text-decoration:none}
 #talk{pointer-events:auto;border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:800;font-size:13px;font-family:inherit;border-radius:999px;min-height:34px;padding:0 12px;margin-right:8px}
@@ -245,7 +246,7 @@ em{font-style:normal;font-size:11px;background:#e9e2d8;color:#6b625a;border-radi
 </style>
 </head>
 <body>
-<div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="layer"></div><div id="aim" hidden><i></i><i></i><i></i><i></i></div><div id="aimc" hidden></div></div>
+<div id="stage"><video id="v" playsinline muted autoplay></video><img id="still" hidden alt=""><div id="aimpad" hidden></div><div id="layer"></div><div id="aim" hidden><i></i><i></i><i></i><i></i></div><div id="aimc" hidden></div></div>
 <div id="top"><h1>한자 카메라</h1><button id="rate" type="button">¥1=₩200.6</button><button id="talk" type="button">보여주기</button><button id="share" type="button">공유</button><span class="lg"><span class="t1">1성</span> <span class="t2">2성</span> <span class="t3">3성</span> <span class="t4">4성</span></span></div>
 <div id="st" role="status" hidden></div>
 <div id="bar">
