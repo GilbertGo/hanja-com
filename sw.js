@@ -1,4 +1,4 @@
-const C='hanzi-cam-v49';
+const C='hanzi-cam-v50';
 // 인식 엔진(모델·wasm·opencv)은 버전과 상관없이 따로 보관 → 앱을 고쳐도 다시 받지 않음
 const E='hanzi-engine-1';
 const CH=["chunk-3RNHDNP5.js", "chunk-6SLTANZM.js", "chunk-6VLL7WE2.js", "chunk-7VC2J3N6.js", "chunk-A5ZQKWW3.js", "chunk-AF3V2E4A.js", "chunk-BW7VIC66.js", "chunk-BYTZ2HWZ.js", "chunk-DD2F7PD6.js", "chunk-HDHMYVRZ.js", "chunk-HIYUQRJ6.js", "chunk-HJCWMV6D.js", "chunk-IIIDMEIH.js", "chunk-JLLDSYNY.js", "chunk-JTV3Q3KC.js", "chunk-MJORJPVK.js", "chunk-MSHQDCYT.js", "chunk-NEO2M5OV.js", "chunk-NTIUPAKQ.js", "chunk-OW3GTWUR.js", "chunk-P2BH57ES.js", "chunk-QNP3XEWE.js", "chunk-RFY7EFDI.js", "chunk-SUZQL7UM.js", "chunk-X5SI4PBW.js", "chunk-Y5MZOH4T.js", "chunk-ZMQBEPTM.js"];
